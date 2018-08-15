@@ -11,7 +11,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.21.0'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -69,3 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Authentication gem
 gem 'devise'
+
+#Multi-tenancy gem
+gem 'apartment'

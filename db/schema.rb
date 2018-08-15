@@ -10,7 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_001906) do
+ActiveRecord::Schema.define(version: 2018_08_15_010556) do
+
+  create_table "draft_picks", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "user_id"
+    t.integer "league_id"
+    t.index ["league_id"], name: "index_draft_picks_on_league_id"
+    t.index ["player_id"], name: "index_draft_picks_on_player_id"
+    t.index ["user_id"], name: "index_draft_picks_on_user_id"
+  end
+
+  create_table "draft_settings", force: :cascade do |t|
+    t.integer "type"
+    t.integer "teams"
+    t.integer "league_id"
+    t.index ["league_id"], name: "index_draft_settings_on_league_id"
+  end
+
+  create_table "league_users", force: :cascade do |t|
+    t.string "team_name"
+    t.boolean "admin"
+    t.boolean "owner"
+    t.integer "user_id"
+    t.integer "league_id"
+    t.index ["league_id"], name: "index_league_users_on_league_id"
+    t.index ["user_id"], name: "index_league_users_on_user_id"
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.string "subdomain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "nfl_teams", force: :cascade do |t|
     t.string "city"
