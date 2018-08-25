@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_010556) do
+ActiveRecord::Schema.define(version: 2018_08_25_121002) do
 
   create_table "draft_picks", force: :cascade do |t|
     t.integer "player_id"
@@ -24,8 +24,15 @@ ActiveRecord::Schema.define(version: 2018_08_15_010556) do
   create_table "draft_settings", force: :cascade do |t|
     t.integer "type"
     t.integer "teams"
+    t.integer "draft_id"
+    t.index ["draft_id"], name: "index_draft_settings_on_draft_id"
+  end
+
+  create_table "drafts", force: :cascade do |t|
     t.integer "league_id"
-    t.index ["league_id"], name: "index_draft_settings_on_league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_drafts_on_league_id"
   end
 
   create_table "league_users", force: :cascade do |t|

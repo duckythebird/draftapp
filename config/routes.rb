@@ -6,6 +6,7 @@ class SubdomainConstraint
 end
 
 Rails.application.routes.draw do
+  resources :drafts
   constraints SubdomainConstraint do
     resources :leagues
     resources :players
