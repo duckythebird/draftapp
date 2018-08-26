@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_121002) do
+ActiveRecord::Schema.define(version: 2018_08_25_121849) do
 
   create_table "draft_picks", force: :cascade do |t|
     t.integer "player_id"
     t.integer "user_id"
-    t.integer "league_id"
-    t.index ["league_id"], name: "index_draft_picks_on_league_id"
+    t.integer "draft_id"
+    t.index ["draft_id"], name: "index_draft_picks_on_draft_id"
     t.index ["player_id"], name: "index_draft_picks_on_player_id"
     t.index ["user_id"], name: "index_draft_picks_on_user_id"
   end
