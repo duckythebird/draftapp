@@ -5,7 +5,15 @@
 </div>
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-xs-6'><h1>Sign Up</h1></div>
-        <div class='col-xs-6 text-right'><h1>Sign In</h1></div>
+        <div class='home-page-info'>
+            <p id='info' class='text-center'>This is info about the app. So much info to write. It's crazy how much info there is. Can talk about this for hours and hours. So insane. I'm gonna run out of room.</p>
+        </div>
+    </div>
+    <div class='row home-links-container'>
+        <div class='col-xs-2'></div>
+        <div class='col-xs-3 text-center home-links'><h2><%= link_to 'Sign Up', new_user_registration_path %></h2></div>
+        <div class='col-xs-2'></div>
+        <div class='col-xs-3 text-center home-links'><h2><%= link_to 'Sign In', new_user_session_path %></h2></div>
+        <div class='col-xs-2'></div>
     </div>
 </div>
