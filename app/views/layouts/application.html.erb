@@ -4,14 +4,15 @@
     <title>Draftapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content= "width=device-width, initial-scal=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="padding-top: 70px">
   <% if user_signed_in?%>
+  <body style="padding-top: 70px">
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -41,6 +42,8 @@
       </div>
     </div>
   </nav>
+<% else%>
+<body>
 <%end%>
     
 
@@ -50,12 +53,16 @@
     <%if alert%>
     <p class="alert alert-danger"><%=alert%></p>
     <%end%>
-
+    
+    <% if user_signed_in?%>
     <div class="container-fluid">
+    <% else %>
+    <div>
+    <%end%>
       <%= yield %>
     </div>
 
-    <footer class="page-footer black pt-4">
+    <footer class="page-footer">
       <div class="container-fluid">
         duckythebird
       <div>

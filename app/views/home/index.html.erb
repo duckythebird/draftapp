@@ -1,19 +1,24 @@
-<div class='bg football-img'>
-    <div>
+<div class='hero-image'>
+    <div class='hero-text'>
         <h1>The Draft App</h1>
+        <p>A simple app for drafting.</p>
     </div>
 </div>
+
 <div class='container-fluid'>
-    <div class='row'>
-        <div class='home-page-info'>
-            <p id='info' class='text-center'>This is info about the app. So much info to write. It's crazy how much info there is. Can talk about this for hours and hours. So insane. I'm gonna run out of room.</p>
+    <div class='home-info-container'>
+        <div class='row'>
+            <div class='home-page-info'>
+                <p id='info' class='text-center'>This is info about the app. So much info to write. It's crazy how much info there is. Can talk about this for hours and hours. So insane. I'm gonna run out of room.</p>
+            </div>
         </div>
-    </div>
-    <div class='row home-links-container'>
-        <div class='col-xs-2'></div>
-        <div class='col-xs-3 text-center home-links'><h2><%= link_to 'Sign Up', new_user_registration_path %></h2></div>
-        <div class='col-xs-2'></div>
-        <div class='col-xs-3 text-center home-links'><h2><%= link_to 'Sign In', new_user_session_path %></h2></div>
-        <div class='col-xs-2'></div>
+        <div class='row'>
+            <div class='col-xs-2'></div>
+            <div class='col-xs-3 text-right'><%= link_to 'Sign Up', new_user_registration_path, :class=> 'btn btn-outline text-center' %></div>
+            <div class='col-xs-2'>
+            </div>
+            <div class='col-xs-3 text-left'><%= link_to 'Sign In', new_user_session_path, :class=> 'btn btn-outline text-center' %></div>
+            <div class='col-xs-2'></div>
+        </div>
     </div>
 </div>
