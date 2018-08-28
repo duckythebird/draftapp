@@ -18,12 +18,24 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     width: auto;
-    padding: 1.5em;
     position: absolute;
     left: 0;
     right: 0;
+    box-shadow: 0 12vh 0 12vh purple;
 }
 
-body{
-    padding-bottom: 20px;
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+    padding-top: 0;
+}
+
+.navbar-header button{
+    margin: 25px 10px;
+}
+
+.page-heading{
+    padding-top:100px;
 }
