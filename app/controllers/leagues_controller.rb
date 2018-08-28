@@ -25,6 +25,9 @@ class LeaguesController < ApplicationController
   # POST /leagues.json
   def create
     @league = League.new(league_params)
+    @league.User = current_user
+    @league.isAdmin = true
+    @league.isOwnder = true
 
     respond_to do |format|
       if @league.save

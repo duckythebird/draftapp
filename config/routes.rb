@@ -5,7 +5,9 @@ class SubdomainConstraint
   end
 end
 
+
 Rails.application.routes.draw do
+  resources :tests
   resources :drafts
   constraints SubdomainConstraint do
     resources :leagues
@@ -16,8 +18,11 @@ Rails.application.routes.draw do
     resources :nfl_teams
   end
   
-  
+  resource :leagues
   devise_for :users
+
+  get '/dashboard', to: 'dashboard#index'
+
   root 'home#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
