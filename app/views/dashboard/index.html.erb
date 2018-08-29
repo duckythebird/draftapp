@@ -1,1 +1,27 @@
-<h1> YOU DID IT!!!!!</h1>
+<h1> Dashboard</h1>
+<div class='container-fluid'>
+    <div class='row'>
+        <%= link_to 'New League', new_league_path, :class => 'btn btn-primary'%>
+    </div>
+    <div class='row'>
+        <div class='leagues col-sm-6'>
+            <% if @leagues.any?%>
+                <table class='table table-striped'>
+                <th>
+                    <td>Name</td>
+                    <td>View</td>
+                </th>
+                <% @leagues.each do |league| %>
+                    <tr class='table-row'>
+                        <td><%= league.Name%></td>
+                        <td><%= link_to 'View', league_path%>
+                    </tr>
+                <%end%>
+                </table>
+            <%else%>
+                <p>You do not have any leagues yet. Create a league using the button above!</p>
+            <%end%>
+        </div>
+        <div>
+    </div>
+</div>
