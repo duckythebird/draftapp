@@ -1,20 +1,24 @@
 <h1> Dashboard</h1>
 <div class='container-fluid'>
     <div class='row'>
-        <%= link_to 'New League', new_league_path, :class => 'btn btn-primary'%>
+        <div id='new-league-btn' class='col-sm-5'>
+            <%= link_to 'New League', new_league_path, :class => 'btn btn-primary'%>
+        </div>
     </div>
     <div class='row'>
-        <div class='leagues col-sm-6'>
+        <div class='leagues col-sm-5'>
+            <h1>My Leagues</h1>
             <% if @leagues.any?%>
                 <table class='table table-striped'>
                 <th>
-                    <td>Name</td>
-                    <td>View</td>
+                        <td>Name</td>
+                        <td>View</td>
                 </th>
                 <% @leagues.each do |league| %>
                     <tr class='table-row'>
-                        <td><%= league.Name%></td>
-                        <td><%= link_to 'View', league_path%>
+                        <td></td>
+                        <td><%= league.name%></td>
+                        <td><%= link_to 'View', league_path(league.id)%>
                     </tr>
                 <%end%>
                 </table>
